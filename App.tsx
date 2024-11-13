@@ -5,10 +5,10 @@ import {
   NunitoSans_400Regular,
   NunitoSans_700Bold
 } from "@expo-google-fonts/nunito-sans";
-import Home from "@screens/home";
 import { ThemeProvider } from "styled-components";
 import theme from "@theme/index";
 import Loading from "@components/Loading";
+import Routes from "@routes/index";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -22,7 +22,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? <Home /> : <Loading />}
+      {fontsLoaded ? <Routes /> : <Loading />}
     </ThemeProvider>
   );
 }
