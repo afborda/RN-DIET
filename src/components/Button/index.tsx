@@ -1,8 +1,8 @@
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacityProps } from "react-native";
 import { Container, Title, ContainerButton } from "./styled";
 import { Plus } from "phosphor-react-native";
 
-type Props = {
+type Props = TouchableOpacityProps & {
   label: string;
   type?: "primary" | "secondary";
 };

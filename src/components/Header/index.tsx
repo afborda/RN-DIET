@@ -3,12 +3,12 @@ import {
   Container,
   HeaderComponent,
   Card,
-  TextDescription,
+  Percentage,
   SubDescription,
   ArrowUpRightIcon
 } from "./styled";
 
-export default function Header() {
+export default function Header({}) {
   return (
     <Container>
       <HeaderComponent>
@@ -16,7 +16,7 @@ export default function Header() {
         <Image source={require("../../assets/user/Ellipse.png")} />
       </HeaderComponent>
       <Card>
-        <TextDescription>90,86%</TextDescription>
+        <Percentage>90,86%</Percentage>
         <SubDescription>das refeições dentro da dieta</SubDescription>
         <ArrowUpRightIcon size={24} color="#000" />
       </Card>

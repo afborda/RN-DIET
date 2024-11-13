@@ -20,7 +20,7 @@ export const Card = styled.View`
   position: relative;
 `;
 
-export const TextDescription = styled.Text`
+export const Percentage = styled.Text`
   font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
   color: ${({ theme }) => theme.COLORS.gray_1};
   font-size: ${({ theme }) => theme.FONT.SIZE_32}px;
