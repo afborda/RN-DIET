@@ -1,10 +1,12 @@
 import { Container, Title } from "./styled";
 import Button from "@components/Button";
+import Header from "@components/Header";
 
 export default function Home() {
   return (
     <Container>
-      <Title>Home</Title>
+      <Header />
+      <Title>Refeições</Title>
       <Button label="Nova refeição" type="primary" />
     </Container>
   );

@@ -8,7 +8,8 @@ export const Container = styled(SafeAreaView)`
 `;
 
 export const Title = styled.Text`
-  color: green;
-  text-align: center;
-  font-size: 24px;
+  color: ${({ theme }) => theme.COLORS.gray_1};
+  font-size: ${({ theme }) => theme.FONT.SIZE_16}px;
+  font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
+  margin-bottom: 8px;
 `;
