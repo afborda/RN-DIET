@@ -8,7 +8,8 @@ export const Container = styled.View`
   align-items: center;
   border-radius: 6px;
   padding: 0 16px;
-  border: 1px solid ${({ theme }) => theme.COLORS.gray_4};
+  border: 1px solid ${({ theme }) => theme.COLORS.gray_5};
+  margin-top: 16px;
 `;
 
 export const ContainerTime = styled.View`

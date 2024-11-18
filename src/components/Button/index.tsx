@@ -5,11 +5,12 @@ import { Plus } from "phosphor-react-native";
 type Props = TouchableOpacityProps & {
   label: string;
   type?: "primary" | "secondary";
+  onPress?: () => void;
 };
 
-export default function Button({ label, type = "primary" }: Props) {
+export default function Button({ label, type = "primary", onPress }: Props) {
   return (
-    <Container>
+    <Container onPress={onPress}>
       {type === "primary" && (
         <ContainerButton>
           <Plus size={18} color="#fff" />
