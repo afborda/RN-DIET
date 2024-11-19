@@ -1,6 +1,7 @@
 import { useTheme } from "styled-components/native";
 import { Container, Label } from "./styled";
 import { TextInput, TextInputProps } from "react-native";
+import { FIFTY, FOUR, ONE, THREE_HUNDRED } from "@utils/consts";
 
 type Props = TextInputProps & {
   inputRef?: React.RefObject<TextInput>;
@@ -26,8 +27,8 @@ export function Input({
         placeholderTextColor={COLORS.gray_2}
         ref={inputRef}
         multiline={InputType === "description"}
-        numberOfLines={InputType === "description" ? 4 : 1}
-        maxLength={InputType === "description" ? 300 : 50}
+        numberOfLines={InputType === "description" ? FOUR : ONE}
+        maxLength={InputType === "description" ? THREE_HUNDRED : FIFTY}
         {...rest}
       />
     </>

@@ -1,4 +1,5 @@
-import { Container, ContainerScroll, Title } from "./styled";
+import { ButtonOption } from "@components/ButtonOption";
+import { Container, ContainerScroll, Label, Title } from "./styled";
 import Button from "@components/Button";
 import CardList from "@components/CardList";
 import Header from "@components/Header";
@@ -71,7 +72,20 @@ export default function Home() {
             keyboardType="numeric"
           />
         </View>
-
+        <Label>Está dentro da dieta?</Label>
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+          <ButtonOption
+            label="Está dentro da dieta?"
+            type="success"
+            title="Salvar"
+            onPress={handleValidadeTextDate}
+          />
+          <ButtonOption
+            type="danger"
+            title="Não"
+            onPress={handleValidadeTextDate}
+          />
+        </View>
         <CardList />
         <CardList />
         <CardList />

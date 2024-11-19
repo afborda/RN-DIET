@@ -1,5 +1,4 @@
 import { TextInput } from "react-native";
-import { TextInputMask } from "react-native-masked-text";
 import styled, { css } from "styled-components/native";
 
 interface InputProps {
@@ -12,8 +11,8 @@ export const Container = styled.View`
 `;
 
 export const ContainerInput = styled(TextInput)<InputProps>`
-  min-height: ${(porps) =>
-    porps.typeInput === "description" ? "120px" : "48px"};
+  min-height: ${(props) =>
+    props.typeInput === "description" ? "120px" : "48px"};
   max-height: ${(porps) =>
     porps.typeInput === "description" ? "120px" : "48px"};
   border-radius: 6px;
