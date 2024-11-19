@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import styled from "styled-components/native";
 
 interface IHeaderProps {
-  type?: "success" | "danger";
+  typeHeader?: "success" | "danger";
   typeCard?: "simple" | "success" | "danger";
 }
 
@@ -15,10 +15,18 @@ export const Container = styled.View`
 export const HeaderContainer = styled(SafeAreaView)<IHeaderProps>`
   width: 100%;
   height: 200px;
-  background-color: ${(props) =>
-    props.type === "danger"
-      ? props.theme.COLORS.red_dark
-      : props.theme.COLORS.green_mid};
+  background-color: ${(props) => {
+    console.log(props.typeHeader);
+
+    if (props.typeHeader === "success") {
+      return props.theme.COLORS.green_light;
+    }
+    if (props.typeHeader === "danger") {
+      return props.theme.COLORS.red_light;
+    }
+    return props.theme.COLORS.gray_6;
+  }};
+
   align-items: center;
   justify-content: center;
   position: relative;
@@ -71,9 +79,7 @@ export const Card = styled.View<IHeaderProps>`
     return "100%";
   }};
 
-  flex-direction: ${(props) =>
-    props.type === "danger" || props.type === "success" ? "row" : "column"};
-
+  flex-direction: column;
   height: 100px;
   border-radius: 8px;
   margin-bottom: 16px;

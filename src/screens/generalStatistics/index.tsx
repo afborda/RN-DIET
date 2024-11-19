@@ -13,16 +13,23 @@ import {
   TitleContainer
 } from "./styled";
 
-interface props {
-  type: "success" | "danger";
-  typeCard?: "simple" | "success" | "danger";
-}
+import { useNavigation, useRoute } from "@react-navigation/native";
 
-export function GeneralStatistics({ type = "success" }: props) {
+type props = {
+  type?: "success" | "danger";
+  typeCard?: "simple" | "success" | "danger";
+};
+
+export function GeneralStatistics({}: props) {
+  const navigation = useNavigation();
+
+  const route = useRoute();
+  const { type } = route.params;
+
   return (
     <Container>
-      <HeaderContainer type={type}>
-        <ContainerIcons>
+      <HeaderContainer typeHeader={type}>
+        <ContainerIcons onPress={() => navigation.navigate("Home")}>
           <ArrowLeftHeader color="red" size={30} />
         </ContainerIcons>
 

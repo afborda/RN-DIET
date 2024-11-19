@@ -11,16 +11,24 @@ import { validateDate, validateTime } from "@utils/InputValidate";
 import { useCallback, useEffect, useState } from "react";
 import { View } from "react-native";
 
+import { useNavigation } from "@react-navigation/native";
+
 export default function Home() {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [isValidade, setIsValidade] = useState({ date: true, time: false });
+
+  const navigation = useNavigation();
 
   const handleValidadeTextDate = () => {
     const dateIsValid = validateDate(date);
     const timeIsValid = validateTime(time);
 
     setIsValidade({ date: dateIsValid, time: timeIsValid });
+  };
+
+  const handleNavigatioStatistics = () => {
+    navigation.navigate("Statistics", { type: "success" });
   };
 
   useFocusEffect(
@@ -34,14 +42,10 @@ export default function Home() {
     validateTime(setTime(formatTime(Date.now())));
   }, []);
 
-  // useEffect(() => {
-  //   handleValidadeTextDate();
-  // }, [date, time]);
-
   return (
     <Container>
       <ContainerScroll>
-        <Header />
+        <Header onPress={handleNavigatioStatistics} />
         <Title>Refeições</Title>
         <Button
           label="Nova refeição"

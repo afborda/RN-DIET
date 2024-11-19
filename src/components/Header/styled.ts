@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { ArrowUpRight } from "phosphor-react-native";
+import { TouchableOpacity } from "react-native";
 
 export const Container = styled.View``;
 
@@ -9,7 +10,7 @@ export const HeaderComponent = styled.View`
   margin-bottom: 33px;
 `;
 
-export const Card = styled.View`
+export const Card = styled(TouchableOpacity)`
   height: 102px;
   width: 100%;
   background-color: ${({ theme }) => theme.COLORS.green_light};
