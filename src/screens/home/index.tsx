@@ -38,8 +38,12 @@ export default function Home() {
   );
 
   useEffect(() => {
-    validateDate(setDate(formatDate(Date.now())));
-    validateTime(setTime(formatTime(Date.now())));
+    const date = formatDate(Date.now());
+    const time = formatTime(Date.now());
+    setDate(date);
+    setTime(time);
+
+    handleValidadeTextDate();
   }, []);
 
   return (
