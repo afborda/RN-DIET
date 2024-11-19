@@ -1,29 +1,25 @@
-import { Image, TouchableOpacityProps, View } from "react-native";
 import {
-  Container,
-  HeaderComponent,
-  Card,
+  ArrowLeftHeader,
+  ContainerIcons,
+  HeaderContainer,
   Percentage,
-  SubDescription,
-  ArrowUpRightIcon
+  SubDescription
 } from "./styled";
 
-type Props = TouchableOpacityProps & {
+interface Props {
+  type?: "success" | "danger";
   onPress: () => void;
-};
+}
 
-export default function Header({ onPress }: Props) {
+export default function Header({ type, onPress }: Props) {
   return (
-    <Container>
-      <HeaderComponent>
-        <Image source={require("../../assets/logo/Logo.png")} />
-        <Image source={require("../../assets/user/Ellipse.png")} />
-      </HeaderComponent>
-      <Card onPress={onPress}>
-        <Percentage>90,86%</Percentage>
-        <SubDescription>das refeições dentro da dieta</SubDescription>
-        <ArrowUpRightIcon size={24} color="#000" />
-      </Card>
-    </Container>
+    <HeaderContainer typeHeader={type}>
+      <ContainerIcons onPress={onPress}>
+        <ArrowLeftHeader size={30} typeHeader={type} />
+      </ContainerIcons>
+
+      <Percentage>90,86%</Percentage>
+      <SubDescription>das refeições dentro da dieta</SubDescription>
+    </HeaderContainer>
   );
 }

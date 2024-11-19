@@ -7,6 +7,7 @@ interface InputProps {
 
 export const Container = styled(TextInput)<InputProps>`
   flex: 1;
+  width: 100%;
   min-height: ${(porps) =>
     porps.typeInput === "description" ? "120px" : "48px"};
   max-height: ${(porps) =>
@@ -20,6 +21,7 @@ export const Container = styled(TextInput)<InputProps>`
     font-family: ${theme.FONT_FAMILY.REGULAR};
     font-size: ${theme.FONT.SIZE_16}px;
   `}
+  margin-bottom: 10px;
 `;
 
 export const Label = styled.Text`
@@ -29,4 +31,5 @@ export const Label = styled.Text`
     font-size: ${theme.FONT.SIZE_16}px;
   `}
   margin-bottom: 5px;
+  width: 100%;
 `;

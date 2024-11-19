@@ -1,41 +1,27 @@
 import { Text, TouchableOpacity, View } from "react-native";
 import {
-  ArrowLeftHeader,
   Card,
   Container,
   ContainerCards,
-  ContainerIcons,
-  HeaderContainer,
-  Percentage,
-  SubDescription,
   SubTitleCard,
   TitleCard,
   TitleContainer
 } from "./styled";
 
 import { useNavigation, useRoute } from "@react-navigation/native";
+import Header from "@components/Header";
 
-type props = {
-  type?: "success" | "danger";
-  typeCard?: "simple" | "success" | "danger";
-};
+type Status = "success" | "danger";
 
-export function GeneralStatistics({}: props) {
+export function GeneralStatistics() {
   const navigation = useNavigation();
 
-  const route = useRoute();
+  const route: any = useRoute();
   const { type } = route.params;
 
   return (
     <Container>
-      <HeaderContainer typeHeader={type}>
-        <ContainerIcons onPress={() => navigation.navigate("Home")}>
-          <ArrowLeftHeader color="red" size={30} />
-        </ContainerIcons>
-
-        <Percentage>90,86%</Percentage>
-        <SubDescription>das refeições dentro da dieta</SubDescription>
-      </HeaderContainer>
+      <Header type={type} onPress={() => navigation.goBack()} />
       <ContainerCards>
         <TitleContainer>Estatísticas gerais</TitleContainer>
         <Card>

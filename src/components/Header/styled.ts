@@ -1,23 +1,32 @@
-import styled from "styled-components/native";
-import { ArrowUpRight } from "phosphor-react-native";
+import { ArrowLeft } from "phosphor-react-native";
 import { TouchableOpacity } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import styled from "styled-components/native";
+
+interface IHeaderProps {
+  typeHeader?: "success" | "danger";
+  typeCard?: "simple" | "success" | "danger";
+}
 
 export const Container = styled.View``;
 
-export const HeaderComponent = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 33px;
-`;
-
-export const Card = styled(TouchableOpacity)`
-  height: 102px;
+export const HeaderContainer = styled(SafeAreaView)<IHeaderProps>`
   width: 100%;
-  background-color: ${({ theme }) => theme.COLORS.green_light};
-  margin-bottom: 40px;
-  border-radius: 8px;
-  justify-content: center;
+  height: 200px;
+  background-color: ${(props) => {
+    console.log(props.typeHeader);
+
+    if (props.typeHeader === "success") {
+      return props.theme.COLORS.green_light;
+    }
+    if (props.typeHeader === "danger") {
+      return props.theme.COLORS.red_light;
+    }
+    return props.theme.COLORS.gray_5;
+  }};
+
   align-items: center;
+  justify-content: center;
   position: relative;
 `;
 
@@ -33,9 +42,24 @@ export const SubDescription = styled.Text`
   font-size: ${({ theme }) => theme.FONT.SIZE_14}px;
 `;
 
-export const ArrowUpRightIcon = styled(ArrowUpRight)`
+export const ContainerIcons = styled(TouchableOpacity)`
+  height: 40px;
+  width: 100px;
   position: absolute;
-  right: 5px;
-  top: 5px;
-  color: ${({ theme }) => theme.COLORS.green_dark};
+  left: 5px;
+  top: 60px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ArrowLeftHeader = styled(ArrowLeft)<IHeaderProps>`
+  color: ${(props) => {
+    if (props.typeHeader === "success") {
+      return props.theme.COLORS.green_dark;
+    }
+    if (props.typeHeader === "danger") {
+      return props.theme.COLORS.red_dark;
+    }
+    return props.theme.COLORS.gray_1;
+  }};
 `;

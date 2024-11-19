@@ -13,7 +13,7 @@ export const ContainerButtonOption = styled(TouchableOpacity)`
   height: 50px;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin: 10px 5px 0 5px;
   border-radius: 6px;
 `;
 

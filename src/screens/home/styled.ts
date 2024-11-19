@@ -16,12 +16,3 @@ export const Title = styled.Text`
   font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
   margin-bottom: 8px;
 `;
-
-export const Label = styled.Text`
-  ${({ theme }) => css`
-    color: ${theme.COLORS.gray_2};
-    font-family: ${theme.FONT_FAMILY.BOLD};
-    font-size: ${theme.FONT.SIZE_16}px;
-  `}
-  margin-top: 15px;
-`;

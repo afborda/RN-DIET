@@ -1,11 +1,5 @@
 import { TouchableOpacityProps } from "react-native";
-import {
-  Container,
-  Title,
-  Circle,
-  Label,
-  ContainerButtonOption
-} from "./styled";
+import { Title, Circle, ContainerButtonOption } from "./styled";
 
 type Props = TouchableOpacityProps & {
   title: string;
