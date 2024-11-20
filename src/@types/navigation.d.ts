@@ -4,6 +4,7 @@ export declare global {
       Home: undefined;
       Statistics: { type: string };
       NewMeal: undefined;
+      Feedback: { type: string };
     }
   }
 }

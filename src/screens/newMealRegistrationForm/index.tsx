@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 
 import Header from "@components/Header";
 import { Container, Label, ContainerForm } from "./styled";
@@ -19,10 +19,13 @@ export default function NewMealRegistrationForm() {
 
   const navigation = useNavigation();
 
+  const handleSaveDataNewMeal = (statusValue: Status) => {
+    navigation.navigate("Feedback", { type: statusValue });
+  };
+
   const handleValidadeTextDate = () => {
     const dateIsValid = validateDate(date);
     const timeIsValid = validateTime(time);
-
     setIsValidade({ date: dateIsValid, time: timeIsValid });
   };
 
@@ -74,13 +77,13 @@ export default function NewMealRegistrationForm() {
           <ButtonOption
             label="Está dentro da dieta?"
             type="success"
-            title="Salvar"
-            onPress={handleValidadeTextDate}
+            title="Sim"
+            onPress={() => handleSaveDataNewMeal("success")}
           />
           <ButtonOption
             type="danger"
             title="Não"
-            onPress={handleValidadeTextDate}
+            onPress={() => handleSaveDataNewMeal("danger")}
           />
         </View>
       </ContainerForm>

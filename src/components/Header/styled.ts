@@ -14,8 +14,6 @@ export const HeaderContainer = styled(SafeAreaView)<IHeaderProps>`
   width: 100%;
   height: 200px;
   background-color: ${(props) => {
-    console.log(props.typeHeader);
-
     if (props.typeHeader === "success") {
       return props.theme.COLORS.green_light;
     }

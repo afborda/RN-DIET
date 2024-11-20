@@ -10,7 +10,7 @@ import CardHeader from "@components/CardHeader";
 type Status = "success" | "danger";
 
 export default function Home() {
-  const [status, setStatus] = useState<Status>("danger");
+  const [status, setStatus] = useState<Status>("success");
 
   const navigation = useNavigation();
 

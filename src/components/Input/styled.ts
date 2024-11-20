@@ -13,7 +13,7 @@ export const Container = styled(TextInput)<InputProps>`
   max-height: ${(porps) =>
     porps.typeInput === "description" ? "120px" : "48px"};
   border-radius: 6px;
-  padding: ${(porps) => (porps.typeInput === "description" ? "5px" : "16px")};
+  padding: ${(porps) => (porps.typeInput === "description" ? "5px" : "10px")};
 
   ${({ theme }) => css`
     border: 1px solid ${theme.COLORS.gray_5};
